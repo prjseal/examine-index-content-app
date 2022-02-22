@@ -1,0 +1,61 @@
+﻿<div id="examineManagement" class="examine-management" ng-controller="Umbraco.Dashboard.ExamineContentAppController as vm">
+    <div ng-show="vm.loading">
+        <umb-load-indicator></umb-load-indicator>
+    </div>
+    <div>
+        <div>
+            <umb-editor-sub-header>
+                <umb-editor-sub-header-content-left>
+                    <a href="{{vm.examineDashboardUrl}}" class="umb-package-details__back-action">Open Full Examine Dashboard <span aria-hidden="true">&rarr;</span></a>
+                </umb-editor-sub-header-content-left>
+            </umb-editor-sub-header>
+
+            <div ng-hide="vm.loading">
+                <div ng-repeat="resultSet in vm.searchResultSets" class="umb-panel-group__details">
+                    <div class="umb-panel-group__details-group">
+                        <div class="umb-panel-group__details-group-title">
+                            <div class="umb-panel-group__details-group-name">{{resultSet.indexName }}</div>
+                        </div>
+                        <div class="umb-panel-group__details-checks">
+                            <!-- Search Tool -->
+                            <div class="umb-panel-group__details-check">
+                                <div class="umb-panel-group__details-status">
+                                    <div class="umb-panel-group__details-status-content">
+                                        <div class="umb-panel-group__details-status-actions">
+                                            <div class="umb-panel-group__details-status-action">
+                                                <ng-form name="searchTools">
+                                                    <div ng-if="resultSet.searchResults.results">
+                                                        <table class="table table-bordered table-condensed">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="score">Score</th>
+                                                                    <th class="id">Id</th>
+                                                                    <th><localize key="general_name">Name</localize></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="result in resultSet.searchResults.results">
+                                                                    <td>{{result.score}}</td>
+                                                                    <td>{{result.id}}</td>
+                                                                    <td>
+                                                                        <a ng-show="result.editUrl" ng-click="vm.goToResult(result, $event)" ng-href="#{{result.editUrl}}">{{ ::result.values['nodeName'] | umbCmsJoinArray:', '}}</a>
+                                                                        <span ng-hide="result.editUrl">{{ ::result.values['nodeName'] | umbCmsJoinArray:', '}}</span>
+                                                                        <button type="button" class="table__action-overlay color-green" ng-click="vm.showSearchResultDialog(result.values)">({{ ::result.fieldCount}} <localize key="examineManagement_fields">fields</localize>)</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </ng-form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

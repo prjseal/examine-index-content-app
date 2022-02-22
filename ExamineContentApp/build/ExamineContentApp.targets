@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<ExamineContentAppContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\ExamineContentApp\**\*.*</ExamineContentAppContentFilesPath>
+	</PropertyGroup>
+
+	<Target Name="CopyExamineContentAppAssets" BeforeTargets="Build">
+		<ItemGroup>
+			<ExamineContentAppContentFiles Include="$(ExamineContentAppContentFilesPath)" />
+		</ItemGroup>
+		<Message Text="Copying ExamineContentApp files: $(ExamineContentAppContentFilesPath) - #@(ExamineContentAppContentFiles->Count()) files"  Importance="high" />
+		<Copy
+            SourceFiles="@(ExamineContentAppContentFiles)"
+            DestinationFiles="@(ExamineContentAppContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\ExamineContentApp\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+
+	</Target>
+
+	<Target Name="ClearExamineContentAppAssets" BeforeTargets="Clean">
+		<ItemGroup>
+			<ExamineContentAppDir Include="$(MSBuildProjectDirectory)\App_Plugins\ExamineContentApp\" />
+		</ItemGroup>
+		<Message Text="Clear old ExamineContentApp data"  Importance="high" />
+		<RemoveDir Directories="@(ExamineContentAppDir)"  />
+	</Target>
+
+</Project>

@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ExamineContentApp
+/ExamineContentApp/bin/Debug/net5.0
+/ExamineContentApp/obj
+/ExamineContentApp.Site/App_Plugins/ExamineContentApp
+/ExamineContentApp/bin/Debug

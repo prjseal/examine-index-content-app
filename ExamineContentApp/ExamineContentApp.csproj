@@ -5,22 +5,27 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PackageId>ExamineContentApp</PackageId>
-		<Version>2.0.0</Version>
+		<PackageId>Our.Umbraco.ExamineContentApp</PackageId>
+		<Title>Our.Umbraco.ExamineContentApp</Title>
+		<Version>1.0.0</Version>
+		<Authors>Paul Seal</Authors>
 
 		<PackageIconUrl>https://github.com/prjseal/examine-index-content-app/blob/main/images/logo.png?raw=true</PackageIconUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://our.umbraco.com/packages/backoffice-extensions/examinecontentapp/</PackageProjectUrl>
-		<PackageTags>Umbraco Examine Content App</PackageTags>
+		<PackageTags>Umbraco Examine Content App NET Core Our</PackageTags>
 
 		<RepositoryUrl>https://github.com/prjseal/examine-index-content-app</RepositoryUrl>
-
+		<RepositoryType>Git</RepositoryType>
+		
 		<Description>A content app which shows you the examine index results for the current page</Description>
 		<PackageReleaseNotes>
-			Completely rebuilt this package to work with Umbraco v8 and v9.
+			This package with Umbraco v8 and v9.
 			This will list out the indexes and the result for the current page in each index.
 			You can click on the fields to see what is stored in examine.
 		</PackageReleaseNotes>
+	
+		<IncludeBuildOutput>false</IncludeBuildOutput>
 	</PropertyGroup>
 
 	<!-- package files -->
@@ -35,9 +40,7 @@
         </None>
     </ItemGroup>
 	
-  <ItemGroup>
-    <None Include="../images/logo.png" Pack="true" PackPath="\" />
-	<None Include="../README.md" Pack="true" PackPath="\" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackPath="\" />
+	</ItemGroup>
 </Project>

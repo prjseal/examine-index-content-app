@@ -7,12 +7,13 @@
 	<PropertyGroup>
 		<PackageId>Our.Umbraco.ExamineContentApp</PackageId>
 		<Title>Our.Umbraco.ExamineContentApp</Title>
-		<Version>1.0.0</Version>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<VersionSuffix>rc-001.3</VersionSuffix>
 		<Authors>Paul Seal</Authors>
 
-		<PackageIconUrl>https://github.com/prjseal/examine-index-content-app/blob/main/images/logo.png?raw=true</PackageIconUrl>
+		<PackageIconUrl>https://github.com/prjseal/examine-index-content-app/blob/master/images/logo.png?raw=true</PackageIconUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://our.umbraco.com/packages/backoffice-extensions/examinecontentapp/</PackageProjectUrl>
+		<PackageProjectUrl>https://our.umbraco.com/packages/backoffice-extensions/ourumbracoexaminecontentapp/</PackageProjectUrl>
 		<PackageTags>Umbraco Examine Content App NET Core Our</PackageTags>
 
 		<RepositoryUrl>https://github.com/prjseal/examine-index-content-app</RepositoryUrl>
@@ -20,11 +21,13 @@
 		
 		<Description>A content app which shows you the examine index results for the current page</Description>
 		<PackageReleaseNotes>
-			This package with Umbraco v8 and v9.
+			This package works with Umbraco v8 and v9.
 			This will list out the indexes and the result for the current page in each index.
 			You can click on the fields to see what is stored in examine.
+			Fixed an issue where it doesn't load the first time when the site starts.
 		</PackageReleaseNotes>
-	
+
+		<ContentTargetFolders>content</ContentTargetFolders>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 	</PropertyGroup>
 

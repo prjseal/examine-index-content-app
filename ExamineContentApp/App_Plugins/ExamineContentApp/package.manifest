@@ -8,7 +8,8 @@
       "icon": "icon-search", // required - the icon to use
       "view": "~/App_Plugins/ExamineContentApp/examineContentApp.html", // required - the location of the view file
       "show": [
-        "+content/*" // show app for all content types
+        "+content/*", // show app for all content types
+        "+role/admin"
       ]
     }
   ],

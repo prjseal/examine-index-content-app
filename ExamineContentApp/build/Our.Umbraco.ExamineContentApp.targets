@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
 	<PropertyGroup>
-		<ExamineContentAppContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\ExamineContentApp\**\*.*</ExamineContentAppContentFilesPath>
+		<ExamineContentAppContentFilesPath>$(MSBuildThisFileDirectory)..\content\App_Plugins\ExamineContentApp\**\*.*</ExamineContentAppContentFilesPath>
 	</PropertyGroup>
 
 	<Target Name="CopyExamineContentAppAssets" BeforeTargets="Build">
